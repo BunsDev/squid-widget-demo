@@ -1,38 +1,63 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Squid Widget Demo
 
-## Getting Started
+## 📃 Docs Improvements
 
-First, run the development server:
+### 📙 Installation guide
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+When using the Widget in NextJS, the `next-transpile-modules` NPM package is not longer needed if you are using `NextJS>=v13.1`. Since this version, NextJS has the `next-transpile-modules` package built-in.
+
+Reference links:
+
+- https://nextjs.org/blog/next-13-1#built-in-module-transpilation-stable
+- https://github.com/martpie/next-transpile-modules/releases/tag/the-end
+
+### ⚙️ Missing config option
+
+The `enableExpress` config option is implemented in the API, but not present in the docs
+
+## 💅🏾 Widget styles customization
+
+In order to style each component of the Widget via CSS, we can use the following IDs:
+
+- Widget container: `squid-widget`
+- Widget header: `squid-widget-header`
+- Widget header logo: `squid-header-logo`
+- Widget header title: `squid-header-title`
+- Swap direction text ("from" or "to"): `squid-swap-direction-txt`
+- Primary Hover button: `squid-primary-hover-button`
+- Secondary hover button: `squid-secondary-hover-button`
+- Dropdown button: `squid-dropdown-btn`
+- Dropdown icon: `squid-dropdown-icon`
+- Dropdown label: `squid-dropdown-label`
+- Icon button: `squid-icon-button`
+- Submit swap button: `squid-submit-swap-btn`
+- Swap source container: `squid-swap-source`
+- Swap destination container: `squid-swap-destination`
+
+## ✨ Customization improvement
+
+In [this line of the Widget header component](https://github.com/0xsquid/squid-widget/blob/504ad860619ee1511800f4e620f36f8ed7ce879c/packages/widget/src/widget/components/HeaderLogo.tsx#LL19C23-L19C23), the `alt` attribute of the header logo is hardcoded to be "squid logo", but it would be nice to use the `companyName` instead.
+
+It could be changed from this:
+
+```tsx
+<ImageWrapper
+  alt="squid logo"
+  //...
+/>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+to this:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```tsx
+<ImageWrapper
+  alt={`${config.companyName ?? "squid"} logo`}
+  //...
+/>
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## 🔨 Minor fixes
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Grammar mistake:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+"If you our your users discover any persistent issues..." -> "If you _or_ your users discover any persistent issues..."
