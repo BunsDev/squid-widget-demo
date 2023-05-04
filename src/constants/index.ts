@@ -1,4 +1,4 @@
-import { Widget } from "@/types"
+import { Widget, WidgetTheme } from "@/types"
 
 const sharedWidgetConfig = {
   apiUrl: "https://testnet.api.0xsquid.com"
@@ -60,6 +60,72 @@ export const WIDGETS_LIST: Widget[] = [
       ...sharedWidgetConfig,
       slippage: 0.5,
       infiniteApproval: false
+    }
+  }
+]
+
+export const WIDGET_THEMES: WidgetTheme[] = [
+  {
+    name: "Darkblue",
+    color: "bg-[#202053]",
+    style: {
+      neutralContent: "#636781",
+      baseContent: "#eeeefe",
+      base100: "#454565",
+      base200: "#202053",
+      base300: "#111131",
+      error: "#ed5656",
+      warning: "#eded56",
+      success: "#56ed56",
+      primary: "#5656ed",
+      secondary: "#37397C",
+      secondaryContent: "#bbbbfb",
+      neutral: "#101030",
+      roundedBtn: "24px",
+      roundedBox: "20px",
+      roundedDropDown: "0px"
+    }
+  },
+  {
+    name: "Solarized Dark",
+    color: "bg-[#602116]",
+    style: {
+      neutralContent: "#836761",
+      baseContent: "#feeeee",
+      base100: "#120000",
+      base200: "#402033",
+      base300: "#211121",
+      error: "#ed3636",
+      warning: "#eded36",
+      success: "#36ed36",
+      primary: "#e16666",
+      secondary: "#602116",
+      secondaryContent: "#fbbbbb",
+      neutral: "#301020",
+      roundedBtn: "24px",
+      roundedBox: "20px",
+      roundedDropDown: "0px"
+    }
+  },
+  {
+    name: "Dark",
+    color: "bg-[#080808]",
+    style: {
+      neutralContent: "#666666",
+      baseContent: "#eeeeee",
+      base100: "#080808",
+      base200: "#151515",
+      base300: "#1f1f1f",
+      error: "#ee3333",
+      warning: "#eeee33",
+      success: "#33ee33",
+      primary: "#040404",
+      secondary: "#000000",
+      secondaryContent: "#bbbbbb",
+      neutral: "#080808",
+      roundedBtn: "24px",
+      roundedBox: "20px",
+      roundedDropDown: "0px"
     }
   }
 ]

@@ -6,3 +6,9 @@ export type Widget = {
   description: string
   config: AppConfig
 }
+
+export type WidgetTheme = {
+  color: string
+  name: string
+  style: any
+}
