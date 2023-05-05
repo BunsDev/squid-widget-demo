@@ -2,8 +2,8 @@ import { useState } from "react"
 import { SquidWidget } from "@0xsquid/widget"
 import { WidgetTabControl } from "@/components/WidgetTabControl"
 import { WIDGET_THEMES, WIDGETS_LIST } from "@/constants"
-import { ToggleBar } from "./shared/ToggleBar"
-import { IframeWidget } from "./IframeWidget"
+import { ToggleBar } from "@/components/shared/ToggleBar"
+import { IframeWidget } from "@/components/IframeWidget"
 
 export function WidgetTabs() {
   const [visibleWidget, setVisibleWidget] = useState(WIDGETS_LIST[0])
