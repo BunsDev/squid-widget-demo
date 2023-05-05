@@ -1,3 +1,10 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "no-empty-function": "error",
+    "no-use-before-define": "error",
+    "no-var": "error",
+    "no-eval": "error",
+    "no-implicit-coercion": "error"
+  }
 }
