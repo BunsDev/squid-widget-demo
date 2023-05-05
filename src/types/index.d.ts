@@ -1,4 +1,7 @@
-import { type AppConfig } from "@0xsquid/widget/widget/core/types/config"
+import type {
+  AppConfig,
+  ConfigTheme
+} from "@0xsquid/widget/widget/core/types/config"
 
 export type Widget = {
   id: number
@@ -10,5 +13,5 @@ export type Widget = {
 export type WidgetTheme = {
   color: string
   name: string
-  style: any
+  style: ConfigTheme
 }
