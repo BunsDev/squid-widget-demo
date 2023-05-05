@@ -2,14 +2,18 @@ import { useState } from "react"
 import { SquidWidget } from "@0xsquid/widget"
 import { WidgetTabControl } from "@/components/WidgetTabControl"
 import { WIDGET_THEMES, WIDGETS_LIST } from "@/constants"
+import { ToggleBar } from "./shared/ToggleBar"
 
 export function WidgetTabs() {
   const [visibleWidget, setVisibleWidget] = useState(WIDGETS_LIST[0])
   const [widgetTheme, setWidgetTheme] = useState(WIDGET_THEMES[0])
+  const [areCustomStylesEnabled, setAreCustomStylesEnabled] = useState(false)
 
   return (
-    <section>
-      <nav className="flex flex-row items-center justify-center gap-4 p-4">
+    <section
+      className={areCustomStylesEnabled ? "widget-custom-styles-enabled" : ""}
+    >
+      <nav className="flex flex-wrap flex-row items-center justify-center gap-4 p-4">
         {WIDGETS_LIST.map(widget => (
           <WidgetTabControl
             key={widget.id}
@@ -40,11 +44,11 @@ export function WidgetTabs() {
             <pre>config: {JSON.stringify(visibleWidget.config, null, 2)}</pre>
           </code>
 
-          <nav className="flex gap-4 items-center justify-center">
+          <nav className="flex flex-wrap gap-4 items-center justify-center">
             {WIDGET_THEMES.map(theme => (
               <button
                 key={theme.name}
-                className="bg-slate-700 rounded-full py-2 px-4 flex items-center gap-2 hover:bg-slate-600 transition-colors "
+                className="bg-slate-950 hover:bg-slate-900 border-2 border-transparent transition-colors hover:border-gray-300 rounded-full py-2 px-4 flex items-center gap-2"
                 onClick={() => setWidgetTheme(theme)}
               >
                 <span
@@ -53,6 +57,15 @@ export function WidgetTabs() {
                 {theme.name}
               </button>
             ))}
+
+            <ToggleBar
+              label="Enable direct CSS styling"
+              onToggle={() =>
+                setAreCustomStylesEnabled(
+                  areCustomStylesEnabled => !areCustomStylesEnabled
+                )
+              }
+            />
           </nav>
         </div>
       </article>

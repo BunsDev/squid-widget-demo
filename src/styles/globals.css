@@ -59,3 +59,24 @@ code {
   justify-content: center;
   width: fit-content;
 }
+
+.widget-custom-styles-enabled
+  :is(#squid-header-title, #squid-swap-direction-txt) {
+  color: #fff !important;
+  font-weight: 600 !important;
+}
+
+.widget-custom-styles-enabled #squid-icon-button > svg {
+  color: var(--brand-primary-color);
+}
+
+.widget-custom-styles-enabled #squid-dropdown-btn > button {
+  background-color: var(--brand-secondary-color);
+  border-radius: 1rem;
+  color: #000;
+}
+
+.widget-custom-styles-enabled :is(#squid-swap-source, #squid-swap-destination) {
+  filter: brightness(1.2);
+  z-index: -1;
+}
