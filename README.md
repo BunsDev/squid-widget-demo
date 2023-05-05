@@ -1,5 +1,9 @@
 # Squid Widget Demo
 
+## Preview
+
+Visit the live site [here](https://squid-widget-demo.vercel.app/)
+
 ## 📃 Docs Improvements
 
 ### 📙 Installation guide
